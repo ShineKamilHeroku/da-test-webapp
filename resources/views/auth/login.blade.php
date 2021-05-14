@@ -55,11 +55,11 @@
 
                     <div class="form-group row">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary qa-login-button">
                                 @lang('auth.login.login')
                             </button>
 
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <a class="btn btn-link qa-forget-password-button" href="{{ route('password.request') }}">
                                 @lang('auth.login.forget_pass')
                             </a>
                         </div>
@@ -69,7 +69,7 @@
                         <div class="col-md-8 offset-md-4">
                             @lang('auth.login.first_visit')
 
-                            <a class="btn btn-secondary ml-2" href="{{ route('register') }}">
+                            <a class="btn btn-secondary ml-2 qa-register-button" href="{{ route('register') }}">
                                 @lang('auth.login.register')
                             </a>
                         </div>

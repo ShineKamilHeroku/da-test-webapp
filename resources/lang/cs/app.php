@@ -47,7 +47,7 @@ return [
         'application'    => 'Vytvořit přihlášku',
 
         // Teachers
-        'teachers'       => 'Pro učitelé',
+        'teachers'       => 'Pro učitele',
         'terms'          => 'Termíny',
         'teachers_tuts'  => 'Návody a formuláře',
         'teachers_order' => 'Objednávka pro MŠ/ZŠ',
