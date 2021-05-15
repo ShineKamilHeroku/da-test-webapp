@@ -125,7 +125,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <input type="submit" class="btn btn-primary" value="@lang('students.form.submit_update')">
+                                <input type="submit" class="btn btn-primary qa-submit-button" value="@lang('students.form.submit_update')">
                             </td>
                         </tr>
 

@@ -31,10 +31,10 @@
                     <tbody>
                         @foreach ($students as $student)
                             <tr class="{{ studentListClass($student) }}">
-                                <td>{{ $student->name }}</td>
-                                <td>{{ $student->term->category->name }}</td>
-                                <td data-order="{{ $student->term->start->format("Ymd") }}">{{ $student->term->term_range }}</td>
-                                <td data-order="{{ $student->price_to_pay }}">{{ formatPrice($student->price_to_pay) }}</td>
+                                <td class="qa-student-name">{{ $student->name }}</td>
+                                <td class="qa-course-name">{{ $student->term->category->name }}</td>
+                                <td class="qa-course-date" data-order="{{ $student->term->start->format("Ymd") }}">{{ $student->term->term_range }}</td>
+                                <td class="qa-course-payment" data-order="{{ $student->price_to_pay }}">{{ formatPrice($student->price_to_pay) }}</td>
                                 <td>
                                     @if ($student->canceled !== null)
                                         <span data-toggle="tooltip" title="@lang('students.table.canceled_desc', ['reason' => $student->canceled])">
@@ -43,13 +43,13 @@
                                     @endif
                                     <div class="btn-group" role="group">
                                         @can('view', $student)
-                                            <a href="{{ route('students.show', $student) }}" title="@lang('app.actions.show')" class="btn btn-sm btn-secondary"><i class="fa fa-fw fa-info-circle pr-1"></i>@lang('students.table.info')</a>
+                                            <a href="{{ route('students.show', $student) }}" title="@lang('app.actions.show')" class="btn btn-sm btn-secondary qa-detail-button"><i class="fa fa-fw fa-info-circle pr-1"></i>@lang('students.table.info')</a>
                                         @endcan
                                         @can('update', $student)
-                                            <a href="{{ routeBack('students.edit', $student, 'list') }}" title="@lang('app.actions.edit')" class="btn btn-sm btn-success"><i class="fa fa-fw fa-edit pr-1"></i>@lang('students.table.edit')</a>
+                                            <a href="{{ routeBack('students.edit', $student, 'list') }}" title="@lang('app.actions.edit')" class="btn btn-sm btn-success qa-edit-button"><i class="fa fa-fw fa-edit pr-1"></i>@lang('students.table.edit')</a>
                                         @endcan
                                         @can('logout', $student)
-                                            <a href="{{ routeBack('students.logout', $student, 'list') }}" title="@lang('app.actions.edit')" class="btn btn-sm btn-danger"><i class="fa fa-fw fa-ban pr-1"></i>@lang('students.table.logout')</a>
+                                            <a href="{{ routeBack('students.logout', $student, 'list') }}" title="@lang('app.actions.edit')" class="btn btn-sm btn-danger qa-cancel-button"><i class="fa fa-fw fa-ban pr-1"></i>@lang('students.table.logout')</a>
                                         @endcan
                                     </div>
                                 </td>

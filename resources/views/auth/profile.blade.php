@@ -61,7 +61,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-7 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary qa-login-button">
                                     @lang('auth.profile.button')
                                 </button>
                             </div>

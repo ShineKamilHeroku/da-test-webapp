@@ -166,7 +166,7 @@
                                     </span>
                                 @enderror
 
-                                <input type="submit" class="btn btn-primary mt-3" value="@lang('students.form.submit')">
+                                <input type="submit" class="btn btn-primary mt-3 qa-submit-button" value="@lang('students.form.submit')">
                             </td>
                         </tr>
 

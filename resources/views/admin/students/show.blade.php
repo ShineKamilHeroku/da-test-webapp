@@ -103,54 +103,54 @@
                     </tr>
                     <tr>
                         <td>@lang('students.form.parent_name'):</td>
-                        <td>{{ $student->parent_name }}</td>
+                        <td class="qa-parent-name">{{ $student->parent_name }}</td>
                     </tr>
 
                     <tr>
                         <td>@lang('students.form.forename'):</td>
-                        <td>{{ $student->forename }}</td>
+                        <td class="qa-forename">{{ $student->forename }}</td>
                     </tr>
 
                     <tr>
                         <td>@lang('students.form.surname'):</td>
-                        <td>{{ $student->surname }}</td>
+                        <td class="qa-surname">{{ $student->surname }}</td>
                     </tr>
 
                     <tr>
                         <td>@lang('students.form.birthday'):</td>
-                        <td>{{ $student->birthday }}</td>
+                        <td class="qa-date-of-birth">{{ $student->birthday }}</td>
                     </tr>
 
                     <tr>
                         <td>@lang('students.form.email'):</td>
-                        <td>{{ $student->email }}</td>
+                        <td class="qa-parent-email">{{ $student->email }}</td>
                     </tr>
                     @if (!empty($student->restrictions))
                         <tr>
                             <td>@lang('students.form.restrictions'):</td>
-                            <td>{{ $student->restrictions }}</td>
+                            <td class="qa-student-restrictions">{{ $student->restrictions }}</td>
                         </tr>
                     @endif
                     @if (!empty($student->note))
                         <tr>
                             <td>@lang('students.form.note'):</td>
-                            <td>{{ $student->note }}</td>
+                            <td class="qa-student-note">{{ $student->note }}</td>
                         </tr>
                     @endif
                     @if (!empty($student->private_note))
                         <tr>
                             <td>@lang('students.form.note_private'):</td>
-                            <td>{{ $student->private_note }}</td>
+                            <td class="qa-student-private-note">{{ $student->private_note }}</td>
                         </tr>
                     @endif
                     @canany(['certificateLogin', 'certificatePayment'], $student) <tr>
                             <td>@lang('students.form.certificate')</td>
                             <td>
                                 @can('certificateLogin', $student)
-                                    <a href="{{ route('students.certificate.login', $student) }}" title="@lang('students.certificates.login_download')" class="mb-1 btn btn-sm btn-success"><i class="fa fa-fw fa-file-pdf pr-1"></i>@lang('students.certificates.login_download')</a><br>
+                                    <a href="{{ route('students.certificate.login', $student) }}" title="@lang('students.certificates.login_download')" class="mb-1 btn btn-sm btn-success qa-confirmation-certificate-button"><i class="fa fa-fw fa-file-pdf pr-1"></i>@lang('students.certificates.login_download')</a><br>
                                 @endcan
                                 @can('certificatePayment', $student)
-                                    <a href="{{ route('students.certificate.payment', $student) }}" title="@lang('students.certificates.payment_download')" class="mb-1 btn btn-sm btn-success"><i class="fa fa-fw fa-file-pdf pr-1"></i>@lang('students.certificates.payment_download')</a><br>
+                                    <a href="{{ route('students.certificate.payment', $student) }}" title="@lang('students.certificates.payment_download')" class="mb-1 btn btn-sm btn-success qa-confirmation-certificate-button"><i class="fa fa-fw fa-file-pdf pr-1"></i>@lang('students.certificates.payment_download')</a><br>
                                 @endcan
                             </td>
                         </tr>
